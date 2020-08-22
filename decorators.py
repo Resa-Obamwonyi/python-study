@@ -167,4 +167,6 @@ def new_say_hi():
     "This will say hi"
     return 'hello there'
 
-print(new_say_hi())
+#picks the meta data of the main function as opposed to the decorator's metadata
+print(new_say_hi.__name__) 
+print(new_say_hi.__doc__)
