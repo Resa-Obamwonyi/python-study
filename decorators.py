@@ -82,7 +82,6 @@ print(testMethod())
 
 
 
-
 # defining decorators with arguments, the arguments are passed in the wrapper 
 # and will be passed to the decorated function during execution call
 def decorator_with_arguments(function):
@@ -150,3 +149,22 @@ def function_to_be_decorated(arg1, arg2, arg3):
 
 function_to_be_decorated("Fish", "Eggs", "Somethings")
 
+
+
+
+
+#using functools to save meta data and reduce debugging issues. 
+import functools #do not forget to import
+
+def new_uppercase_decorator(func):
+    @functools.wraps(func) #just drop this here with the proper arguments
+    def wrapper():
+        return func().upper()
+    return wrapper
+@new_uppercase_decorator
+
+def new_say_hi():
+    "This will say hi"
+    return 'hello there'
+
+print(new_say_hi())
