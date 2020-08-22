@@ -36,3 +36,18 @@ def take(n, seq):
     return result
 
 print(take(6, squares())) 
+
+
+
+#chain itertool
+
+it1 = iter([1, 2, 3])
+it2 = iter([4, 5, 6])
+itertools.chain(it1, it2)
+[1, 2, 3, 4, 5, 6]
+
+
+#izip itertool
+
+for x, y in itertools.izip(["a", "b", "c"], [1, 2, 3]):
+     print(x, y)
